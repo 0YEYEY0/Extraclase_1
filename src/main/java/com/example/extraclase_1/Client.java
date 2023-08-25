@@ -52,7 +52,7 @@ public class Client {
                 }
             }
         });
-
+//h
     }
     public void closeEverything(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter) {
         try {

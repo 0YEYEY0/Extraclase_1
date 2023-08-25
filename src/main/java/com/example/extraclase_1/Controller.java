@@ -83,7 +83,7 @@ public class Controller  implements Initializable {
         });
 
     }
-
+    //h
     public static void addLabel(String msgFromServer, VBox vBox){
         HBox hBox = new HBox();
         hBox.setAlignment(Pos.CENTER_LEFT);
