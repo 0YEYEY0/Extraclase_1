@@ -85,7 +85,6 @@ public class Controller  implements Initializable {
         });
 
     }
-    //h
     public static void addLabel(String msgFromServer, VBox vBox){
         HBox hBox = new HBox();
         hBox.setAlignment(Pos.CENTER_LEFT);
@@ -93,7 +92,7 @@ public class Controller  implements Initializable {
 
         Text text= new Text(msgFromServer);
         TextFlow textFlow= new TextFlow(text);
-        textFlow.setStyle("-fx-background-color: rgb(233, 233, 235)-fx-background-radius:20px".formatted());
+        textFlow.setStyle("-fx-background-color: rgb(233,233,235)" + ";-fx-background-radius: 20px");
         textFlow.setPadding(new Insets(5, 10, 5, 10));
         hBox.getChildren().add(textFlow);
 
