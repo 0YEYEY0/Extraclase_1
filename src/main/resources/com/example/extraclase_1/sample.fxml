@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="server" prefHeight="400" prefWidth="500" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Button fx:id="b_enviar" alignment="CENTER_RIGHT" layoutX="450" layoutY="350" text="Enviar" />
+        <TextField fx:id="t_mensaje" layoutX="70" layoutY="350" prefHeight="50" prefWidth="370" />
+        <ScrollPane fx:id="sp" fitToWidth="true" layoutX="70" layoutY="50" prefHeight="300" prefWidth="450">
+            <content>
+                <VBox fx:id="vb_mensajes" alignment="CENTER" prefHeight="250" prefWidth="450" />
+            </content>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <effect>
+                <Blend />
+            </effect>
+        </ScrollPane>
+        <Label layoutX="50" layoutY="11" text="CHAT">
+            <font>
+                <Font name="Arial" size="25" />
+            </font>
+        </Label>
+    </children>
+    <effect>
+        <Glow />
+    </effect>
+</AnchorPane>
