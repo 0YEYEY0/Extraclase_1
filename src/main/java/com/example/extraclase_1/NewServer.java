@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.net.*;
 import java.util.ArrayList;
 
+/**
+ * Esta clase representa un servidor simple que recibe y reenvía mensajes utilizando UDP.
+ */
 public class NewServer {
 
     private static byte[] incoming = new byte[256];
@@ -31,10 +34,14 @@ public class NewServer {
         }
     }
 
-
+    /**
+     * El método principal del servidor, responsable de recibir y reenviar mensajes.
+     *
+     * @param args Argumentos de la línea de comandos (no utilizados en esta aplicación).
+     */
     public static void main(String[] args) {
 
-        System.out.println("Servidor empezo en el puerto " + PORT);
+        System.out.println("Servidor empezó en el puerto " + PORT);
 
         while (true) {
             DatagramPacket packet = new DatagramPacket(incoming, incoming.length);
@@ -47,16 +54,16 @@ public class NewServer {
             String message = new String(packet.getData(), 0, packet.getLength());
             System.out.println("Servidor recibido: " + message);
 
-
+            // Verificar si el mensaje recibido es un mensaje "init;"
             if (message.contains("init;")) {
                 users.add(packet.getPort());
             }
-            // forward
+            // Reenviar el mensaje a todos los usuarios conectados
             else {
                 int userPort = packet.getPort();
                 byte[] byteMessage = message.getBytes();
 
-
+                // Reenviar el mensaje a cada usuario excepto al remitente
                 for (int forward_port : users) {
                     if (forward_port != userPort) {
                         DatagramPacket forward = new DatagramPacket(byteMessage, byteMessage.length, address, forward_port);
@@ -68,8 +75,7 @@ public class NewServer {
                     }
                 }
             }
-
-
         }
     }
 }
+
