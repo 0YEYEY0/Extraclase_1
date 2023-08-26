@@ -51,8 +51,8 @@ public class Client {
                     }
                 }
             }
-        });
-//h
+        }).start();
+
     }
     public void closeEverything(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter) {
         try {
