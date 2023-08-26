@@ -47,6 +47,7 @@ public class Controller  implements Initializable {
             System.out.println("Conectado al servidor");
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Error");
         }
 
         vbox_messages.heightProperty().addListener(new ChangeListener<Number>() {
