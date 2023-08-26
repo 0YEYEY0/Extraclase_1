@@ -11,16 +11,30 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.*;
 
-
+/**
+ * Creación de la clase ChatClient, destinida a ser una aplicación.
+ */
 public class ChatClient extends Application {
 
     private static final DatagramSocket socket;
-
+    /**
+     * Parte estática de la clase. Se declara una variable llamada socket, con los modificadores private static final,
+     * lo que nos hace la variable privada(solo accesible dentro de esta clase), estática (pertenece a la clase, en lugar
+     * una instancia) y final (su valor no puede ser modificada)
+     */
     static {
         try {
             socket=new DatagramSocket();
+            /**
+             * Dentro del bloque estático, se crea una instancia de la clase DatagramSocket utilizando el constructor
+             * predeterminado, que crea un socket UPD. La clase Datagram Socket se utiliza para enviar y recibir paquetes de datos
+             * a través de sockets UPD en Java.
+             */
         } catch (SocketException e) {
             throw new RuntimeException(e);
+            /**
+             * Manejo de excepciones, maneja la excepción que pueda ocurrir al intentar crear el socket.
+             */
         }
     }
     private static final InetAddress address;
